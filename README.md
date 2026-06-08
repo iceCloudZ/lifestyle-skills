@@ -109,6 +109,30 @@ node scripts/validate.mjs
 
 LLM evals are intentionally not part of default CI. They should run manually or on a scheduled job because model outputs are slower, probabilistic, and may depend on external providers.
 
+## Manual LLM Evals
+
+Use `scripts/build-eval-prompts.mjs` to generate deterministic prompts for manual or scheduled LLM evaluation.
+
+List cases:
+
+```bash
+node scripts/build-eval-prompts.mjs --list
+```
+
+Build one prompt:
+
+```bash
+node scripts/build-eval-prompts.mjs --case life-butler-first-movement-001
+```
+
+Build all prompts into a local folder:
+
+```bash
+node scripts/build-eval-prompts.mjs --all --out generated/eval-prompts
+```
+
+These generated prompts are for free chatbots, local models, or scheduled eval jobs. They are not part of default CI because model output is probabilistic and external services may change.
+
 ## CI/CD
 
 This repo uses CI only in the first phase.
