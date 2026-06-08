@@ -33,6 +33,14 @@ CI only runs deterministic checks. LLM evals should run manually or on a schedul
 
 First-use evals must assume no local user data. Do not add weekly review requirements unless the eval case includes enough history or the user explicitly asks for review.
 
+For comparative evals, keep the three stages separate:
+
+1. Generate the baseline response without repository skill materials.
+2. Generate the guided response with the expected skill or lens materials.
+3. Blind the response origin before judging.
+
+Do not reveal the A/B mapping to the judge prompt. Prefer a different model or a human for judging.
+
 ## Release
 
 There is no CD yet. Keep publishing manual until the entry flow, lens format, and eval strategy stabilize.

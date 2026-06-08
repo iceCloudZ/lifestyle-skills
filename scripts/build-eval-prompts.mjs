@@ -35,12 +35,12 @@ export function loadEvalCases(root = defaultRoot) {
   return cases.sort((a, b) => a.id.localeCompare(b.id));
 }
 
-function findRegistryEntry(root, id) {
+export function findRegistryEntry(root, id) {
   const registry = readJson(join(root, "registry.json"));
   return registry.skills.find((skill) => skill.id === id);
 }
 
-function readSkillBundle(root, entry) {
+export function readSkillBundle(root, entry) {
   if (!entry) return "";
 
   const main = readFileSync(join(root, entry.path), "utf8");

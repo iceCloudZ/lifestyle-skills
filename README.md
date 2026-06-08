@@ -133,6 +133,51 @@ node scripts/build-eval-prompts.mjs --all --out generated/eval-prompts
 
 These generated prompts are for free chatbots, local models, or scheduled eval jobs. They are not part of default CI because model output is probabilistic and external services may change.
 
+## Three-Stage Eval Runner
+
+For stronger evidence, keep generation and judging separate.
+
+### 1. Prepare
+
+```bash
+node scripts/run-staged-eval.mjs prepare \
+  --case life-butler-first-movement-001 \
+  --run generated/eval-runs/movement-001
+```
+
+This creates:
+
+```text
+baseline-prompt.md
+with-skill-prompt.md
+baseline-response.md
+with-skill-response.md
+manifest.json
+```
+
+Send each prompt to the selected chatbot or local model independently. Put the answers in the matching response files.
+
+### 2. Judge
+
+```bash
+node scripts/run-staged-eval.mjs judge \
+  --run generated/eval-runs/movement-001
+```
+
+This creates a blind `judge-prompt.md` where the two answers are labeled only as Response A and Response B. Send it to a different model or a human reviewer, then save the required JSON as `judge-result.json`.
+
+### 3. Finalize
+
+```bash
+node scripts/run-staged-eval.mjs finalize \
+  --run generated/eval-runs/movement-001 \
+  --out eval-results/manual.jsonl
+```
+
+Finalize maps the blind A/B result back to `baseline`, `with_skill`, or `tie`, validates binary scores, and writes a scoreboard-compatible result.
+
+Prefer different models for response generation and judging. Record provider and model names in `judge-result.json`. Never use private household data with a third-party free chatbot.
+
 ## Scoreboard
 
 After collecting manual or scheduled eval results, generate a scoreboard:
