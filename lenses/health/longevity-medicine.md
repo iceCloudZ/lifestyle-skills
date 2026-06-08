@@ -1,11 +1,31 @@
 ---
 name: longevity-medicine
 description: Use for preventive health questions where the goal is long-term risk reduction, metric trends, and better doctor conversations. Do not use for acute symptoms, diagnosis, or treatment decisions.
+triggers:
+  - Person wants to understand trends in sleep, blood pressure, labs, weight, or fitness
+  - Goal is prevention and long-term risk reduction, not acute diagnosis
+  - Output should help prepare for a doctor conversation
+  - Person is tracking health metrics and wants clarity on what matters
+  - Preventive care planning over immediate symptom response
+blockers:
+  - Incomplete data making it hard to separate signal from noise
+  - Lab anxiety causing premature interpretation of results
+  - Symptom present that requires medical review rather than lifestyle coaching
+  - Temptation to infer trends without enough context
+safety:
+  - Stay non-diagnostic; encourage clinician review for symptoms, abnormal metrics, medications, or treatment decisions
+  - Do not diagnose, prescribe, change medications, or override clinicians
+  - Hand off for chest pain, fainting, severe symptoms, medication changes, abnormal labs, pregnancy concerns, mental health crisis, or any diagnosis request
+  - Avoid when the person asks for diagnosis, medication changes, or treatment
 ---
 
 # Longevity Medicine
 
-Use this skill to organize health thinking around long-term function, risk reduction, and preventive conversations.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Organize health thinking around long-term function, risk reduction, and preventive conversations.
 
 ## Use When
 

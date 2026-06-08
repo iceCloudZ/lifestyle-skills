@@ -11,6 +11,27 @@ Life Butler is the user-facing entry skill for lifestyle questions. It guides th
 
 Do not jump straight into a domain lens. First help the user choose a suitable way of thinking.
 
+## Lens Index
+
+Available lenses by domain:
+
+| Domain | Lens | Best for | Risk |
+|--------|------|----------|------|
+| Finance | conscious-spending | values-first spending clarity, guilt-free enjoyment | medium |
+| Finance | bogleheads-style | long-term investing discipline, portfolio simplicity | medium |
+| Finance | zero-based-budgeting | cash-flow control, assigning every dollar a job | low |
+| Health | blue-zones-style | whole-life environment, food/movement/stress/connection | medium |
+| Health | daily-dozen-style | plant-forward nutrition checklist, simple meal upgrades | medium |
+| Health | longevity-medicine | preventive metrics, lab trends, doctor questions | high |
+| Movement | zone2-longevity | sustainable aerobic base, low-injury cardio | medium |
+| Movement | strength-baseline | beginner strength, daily-life resilience | medium |
+| Movement | tiny-habits-movement | micro-habits for failed exercise plans, low motivation | low |
+| Family | gottman-style | couple conflict repair, bids for connection | high |
+| Family | nvc-style | conflict de-escalation, observations/feelings/needs/requests | medium |
+| Family | positive-discipline-style | parenting boundaries, kind firmness, long-term skill building | high |
+
+Read `references/selection-rules.md` for detailed blocker-to-lens mappings and tie breakers when the best fit is uncertain.
+
 ## First-Use Flow
 
 When the user asks a lifestyle or household question:
@@ -47,15 +68,35 @@ In No Data Mode:
 - Do not request full household data.
 - Give the user visible control over the lens choice.
 
-Read `references/no-data-mode.md` when the first answer depends on missing context.
+Domain-specific first questions:
 
-## Lens Selection
+- Finance: "你现在更困扰的是现金流混乱、花钱没方向，还是已经有结余但不知道怎么投资？"
+- Movement: "你现在最大障碍是没时间、没动力，还是不知道练什么？"
+- Health: "你想先改善日常习惯，还是想整理指标和医生沟通的问题？"
+- Family: "这是伴侣沟通、亲子管教，还是家庭事务分工的问题？"
 
-Read `../../registry.json` for lens metadata before choosing options. Read `references/lens-catalog.md` for the human-readable catalog, `references/selection-rules.md` for blocker-to-lens mappings, and `references/scoring-model.md` when multiple lenses could fit.
+Read `references/no-data-mode.md` for more context on first-use interactions.
 
-The lens is a thinking mode, not a persona. Use phrases like "values-first spending lens" or "tiny habits movement lens". Do not impersonate public figures.
+## Multi-Lens Recommendation
 
-Use the scoring model to produce an explainable recommendation, not a hidden decision. If the top lens is uncertain or context is missing, ask one clarifying question before applying any lens.
+When the user's situation spans two domains (for example movement + health, finance + family), recommend a primary lens and one supporting lens:
+
+```text
+你的问题涉及两个方面，我建议这样拆分：
+
+主镜头：A（domain-1）—— 处理核心问题
+辅助镜头：B（domain-2）—— 提供 B 方面的约束
+
+我们先按 A 的思路走，在关键步骤上用 B 的原则做检查。这样可以吗？
+```
+
+Rules for multi-lens:
+
+- Primary lens runs its full Reasoning Flow.
+- Supporting lens only contributes its Safety boundaries and Output Format constraints at relevant points.
+- Never combine more than two lenses in a single response.
+- If the user accepts, apply the primary lens and weave in the supporting lens's safety checks.
+- If the user prefers a single lens, drop the supporting lens and apply only the primary.
 
 ## After Lens Recommendation
 
@@ -71,9 +112,10 @@ After recommending 2-3 lenses, do not let the conversation stall at a static men
 After the user chooses a lens:
 
 1. State the selected lens in one sentence.
-2. Use the lens's Reasoning Flow instead of generic advice.
-3. Give the minimum complete answer required by that lens.
-4. Name one boundary or caution if the domain is health, finance, parenting, or relationships.
+2. Read the selected lens file from `lenses/{domain}/{lens-id}.md`.
+3. Use the lens's Reasoning Flow instead of generic advice.
+4. Give the minimum complete answer required by that lens.
+5. Name one boundary or caution if the domain is health, finance, parenting, or relationships.
 
 ## Review Mode
 

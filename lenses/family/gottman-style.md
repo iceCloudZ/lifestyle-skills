@@ -1,11 +1,31 @@
 ---
 name: gottman-style
 description: Use for couple or family relationship maintenance, repair attempts, bids for connection, and recurring conflict patterns. Avoid for abuse risk, coercive control, or immediate safety concerns.
+triggers:
+  - Couple or family relationship needs repair after conflict
+  - Person feels ignored, criticized, distant, or misunderstood
+  - Goal is reconnection and a better next conversation
+  - Recurring conflict pattern needs naming without blame
+  - Bids for connection are being missed or dismissed
+blockers:
+  - Conflict heat too high for constructive communication
+  - Disconnection making bids for connection invisible
+  - Recurring pattern that keeps looping without repair
+  - Repair attempts not landing or not being offered
+safety:
+  - Screen for safety; do not encourage reconciliation, vulnerability, or joint conversation where abuse or coercive control may be present
+  - Do not encourage reconciliation where safety may be at risk
+  - Hand off for abuse, coercive control, intimidation, threats, legal disputes, custody issues, or crisis-level conflict
+  - If safety is uncertain, pause and ask one safety-oriented question or hand off
 ---
 
 # Gottman Style
 
-Use this skill to support relationship repair, friendship, gentle starts, and constructive conflict patterns.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Support relationship repair, friendship, gentle starts, and constructive conflict patterns.
 
 ## Use When
 

@@ -19,7 +19,7 @@ function readJsonl(path) {
 test("life-butler has enough first-use eval coverage", () => {
   const cases = readJsonl("evals/life/life-butler.jsonl");
 
-  assert.ok(cases.length >= 5, `expected at least 5 life-butler cases, found ${cases.length}`);
+  assert.ok(cases.length >= 6, `expected at least 6 life-butler cases, found ${cases.length}`);
   assert.ok(cases.every((item) => item.member_profile_ref === null), "first-use cases should not assume local data");
   assert.ok(cases.some((item) => /理财|money|finance/i.test(item.situation)));
   assert.ok(cases.some((item) => /运动|exercise|movement/i.test(item.situation)));

@@ -1,11 +1,27 @@
 ---
 name: bogleheads-style
 description: Use for long-term investing and asset allocation questions where simple, diversified, low-cost, risk-aware thinking is appropriate. Do not use for short-term trading or specific security selection.
+triggers:
+  - asks about long-term investing principles
+  - wants simple portfolio hygiene
+  - issue is risk tolerance, time horizon, or overcomplication
+  - chasing last year's best-performing fund
+  - wants to sell everything after a market drop
+  - asks about asset allocation without specific products
+blockers:
+  - foundation gap: no emergency fund or high-interest debt dominates
+  - emotional impulse: panic sell or FOMO buy
+  - overcomplex portfolio: too many funds, high fees, unclear strategy
+safety:
+  - do not name specific securities, funds, or allocations
+  - do not provide buy/sell instructions or market timing advice
+  - do not provide tax, estate, or cross-border investment specifics
+  - hand off to licensed professional for regulated advice
 ---
 
 # Bogleheads Style
 
-Use this skill to frame investing decisions around long-term discipline, diversification, low costs, and risk capacity.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
 
 ## Use When
 
@@ -32,48 +48,38 @@ not_for: short-term trading, product picking, crisis cash flow, debt triage, or 
 
 ### 1. Pre-check: Should this lens be used here?
 
-Use this lens only when the core question is long-term investing behavior, portfolio simplicity, or risk discipline. If the user needs emergency reserves, debt triage, or a specific product decision, hand off to cash-flow planning or professional advice before discussing investing.
+Check these before continuing:
 
-### 2. Key assessment questions
+- Is the household foundation stable? Emergency fund exists, high-interest debt is manageable?
+- Is the core question about long-term investing behavior, not short-term trading?
+- Any safety boundary hit (acute crisis, regulated advice needed)?
 
-- What is the money for, and when might it be needed?
-- Is the household foundation stable enough to invest: emergency fund, debt minimums, insurance basics?
-- Is the current problem risk mismatch, overcomplexity, fees, or emotional market timing?
+If foundation is unstable, pause and address that first. If safety boundary is hit, hand off immediately.
 
-Ask only the missing question that changes the path. Do not run a full financial intake in first use.
+### 2. Classify the branch
 
-### 3. Reasoning branches
+Pick exactly one:
 
-- Foundation gap: pause investment optimization and suggest reviewing emergency reserves, debt, and required obligations.
-- Emotional buy or sell impulse: slow the decision down, name the risk of market timing, and suggest an investment policy review before action.
-- Overcomplex portfolio: suggest simplifying principles, fee review, and broad diversification without naming products.
-- Allocation anxiety: discuss time horizon and risk capacity conceptually, then recommend education or a licensed advisor for personalized allocation.
+- **Foundation gap**: User has no emergency fund or high-interest debt dominates. Pause investing discussion. Give one concrete step: "Before investing, set aside one month of essential expenses as an emergency buffer."
+- **Emotional impulse**: User wants to chase a hot fund or panic-sell. Slow the decision. Name the behavioral risk explicitly: "Chasing last year's winner is the most common investing mistake." Give one pause action: "Write down your investing purpose and time horizon before making any change."
+- **Overcomplex portfolio**: User has too many funds, high fees, or unclear strategy. Suggest simplification principles. Give one review action: "List your current funds and their fees. Flag any with expense ratios above 0.5%."
+- **Allocation uncertainty**: User is unsure about risk level or time horizon. Discuss conceptually. Give one clarity action: "Write down when you expect to need this money and how much loss you could tolerate for one year without selling."
 
-### 4. Minimum complete answer
+### 3. Deliver the minimum complete answer
 
-- State why this is a long-term investing discipline problem.
-- Identify the relevant principle: diversification, low cost, time horizon, risk capacity, or staying the course.
-- Refuse or redirect specific buy/sell/product requests.
-- Give one safe review action, such as writing an investment policy note, checking fees, or listing goals and timelines.
+Output all four parts directly. Do not ask questions first unless a critical piece is truly missing.
 
-### 5. Hand-off conditions
+1. **Fit**: One sentence on why this is a long-term investing discipline issue.
+2. **Principle**: The relevant principle (diversification, low cost, time horizon, risk capacity, or staying the course).
+3. **Caution**: One specific thing not to do, tied to the user's situation.
+4. **Next step**: One concrete, safe action the user can take this week. Examples:
+   - "Write a one-paragraph investment policy stating your goal, time horizon, and risk comfort."
+   - "Check the expense ratio of every fund you hold. Flag any above 0.5%."
+   - "This week, do not make any portfolio changes. Write down why you wanted to change and revisit in 7 days."
+
+### 4. Hand-off conditions
 
 Hand off when the user asks for specific securities, tax strategy, retirement drawdown, concentrated stock, debt crisis, or legal/regulated advice. Say that the lens can help frame questions, but a licensed professional should handle the recommendation.
-
-## Thinking Steps
-
-1. Check financial foundation: emergency fund, debt, insurance basics.
-2. Clarify goal, time horizon, and risk capacity.
-3. Prefer simple, low-cost, diversified, long-term approaches.
-4. Discourage frequent tinkering and performance chasing.
-5. Suggest an education or review step instead of a product pick.
-
-## Output Format
-
-- Fit: why this lens applies.
-- Principle: the relevant long-term investing principle.
-- Caution: what not to do.
-- Next step: one safe review or learning action.
 
 ## Safety
 

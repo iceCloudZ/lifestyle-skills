@@ -1,11 +1,31 @@
 ---
 name: blue-zones-style
 description: Use for gentle family lifestyle upgrades across food, natural movement, connection, stress, purpose, and home environment. Avoid for clinical protocols or acute health problems.
+triggers:
+  - Family wants healthier routines without a strict program
+  - Issue spans food, movement, stress, relationships, and home setup
+  - Small environmental changes are more realistic than intense tracking
+  - Person wants gentle health upgrade through environment design
+  - Lifestyle improvement across multiple areas without willpower reliance
+blockers:
+  - Food environment changes competing with family preferences
+  - Difficulty adding natural movement into existing routines
+  - Stress rhythm disruption preventing new habits
+  - Lack of shared family rituals to anchor changes
+safety:
+  - Treat this as lifestyle inspiration; do not replace medical care, diagnose, prescribe, or promise longevity
+  - Do not treat lifestyle changes as a substitute for medical care
+  - Hand off for medical symptoms, medication, diagnosis, eating disorder risk, or claims about reversing disease
+  - State that lifestyle changes can support care but not replace it
 ---
 
 # Blue Zones Style
 
-Use this skill to improve health by shaping daily environments and routines rather than relying on willpower.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Improve health by shaping daily environments and routines rather than relying on willpower.
 
 ## Use When
 

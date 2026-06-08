@@ -1,11 +1,31 @@
 ---
 name: positive-discipline-style
 description: Use for parenting situations where kind firmness, boundaries, encouragement, and long-term skill building matter. Avoid for child safety risk, abuse risk, or clinical child support needs.
+triggers:
+  - Child behavior issue needs a calm boundary
+  - Parent wants alternatives to yelling, punishment, or giving in
+  - Goal is teaching responsibility, cooperation, or emotional regulation
+  - Parenting situation needs kind firmness and long-term skill building
+  - Family boundaries need reinforcing with encouragement
+blockers:
+  - Limit setting without a clear calm statement and limited choice
+  - Skill gap in the child that needs identification and small routine building
+  - Repair needed after parent-child conflict
+  - Parent escalation requiring a de-escalation script
+safety:
+  - Do not shame, threaten, use physical punishment, or suggest unsafe natural consequences
+  - Do not recommend shaming, threats, physical punishment, or unsafe consequences
+  - Hand off for safety risk, abuse, self-harm, violence, suspected developmental or mental health needs, school or legal intervention, or medical concerns
+  - If safety, abuse, or clinical concerns appear, hand off immediately
 ---
 
 # Positive Discipline Style
 
-Use this skill to help parents respond with both kindness and firmness while teaching long-term skills.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Help parents respond with both kindness and firmness while teaching long-term skills.
 
 ## Use When
 

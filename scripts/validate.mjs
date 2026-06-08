@@ -26,12 +26,25 @@ function parseFrontmatter(path) {
   }
 
   const meta = {};
+  let currentKey = null;
   for (const line of match[1].split(/\r?\n/)) {
+    if (/^\s+-\s/.test(line)) {
+      if (currentKey && Array.isArray(meta[currentKey])) {
+        meta[currentKey].push(line.replace(/^\s+-\s/, "").trim());
+      }
+      continue;
+    }
     const index = line.indexOf(":");
     if (index === -1) continue;
     const key = line.slice(0, index).trim();
     const value = line.slice(index + 1).trim();
-    meta[key] = value;
+    if (value === "") {
+      meta[key] = [];
+      currentKey = key;
+    } else {
+      meta[key] = value;
+      currentKey = null;
+    }
   }
   return meta;
 }
@@ -79,6 +92,13 @@ function validateRegistryEntry(entry, index) {
 
   if (entry.skill_type === "lens") {
     assert(entry.path.startsWith("lenses/"), `${prefix}.path for lens must be under lenses/`);
+    if (existsSync(contentPath)) {
+      const meta = parseFrontmatter(contentPath);
+      assert(Boolean(meta.description), `${entry.path} frontmatter description is required`);
+      assert(Boolean(meta.triggers), `${entry.path} frontmatter triggers is required`);
+      assert(Boolean(meta.blockers), `${entry.path} frontmatter blockers is required`);
+      assert(Boolean(meta.safety), `${entry.path} frontmatter safety is required`);
+    }
   }
 
   const evalPath = join(root, "evals", entry.domain, `${entry.id}.jsonl`);

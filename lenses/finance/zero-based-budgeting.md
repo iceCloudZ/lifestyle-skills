@@ -1,11 +1,32 @@
 ---
 name: zero-based-budgeting
 description: Use for cash-flow stress, unclear monthly bills, variable expenses, or situations where every unit of income needs an explicit job. Avoid when detailed tracking is the main barrier.
+triggers:
+  - Cash flow feels tight or surprising each month
+  - Bills, debt payments, and upcoming expenses compete for limited funds
+  - Variable expenses make it hard to plan ahead
+  - Household needs clear limits and weekly visibility
+  - Every unit of income needs an explicit job before spending
+blockers:
+  - Irregular or surprise expenses derailing the plan
+  - Debt pressure making it hard to prioritize allocations
+  - Overspending in one category creating a cascade
+  - Paycheck-to-paycheck timing mismatch
+safety:
+  - Avoid moralizing about spending choices; do not imply moral failure
+  - Prioritize obligations and debt minimums before discretionary optimization
+  - Do not provide tax, legal, or regulated product advice
+  - Hand off for insolvency, creditor negotiation, or regulated financial products
+  - If tracking itself is the blocker, suggest a lighter lens
 ---
 
 # Zero-Based Budgeting
 
-Use this skill to help a household regain control by assigning every unit of income a job.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Help a household regain control by assigning every unit of income a job.
 
 ## Use When
 

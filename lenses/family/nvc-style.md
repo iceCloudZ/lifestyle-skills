@@ -1,11 +1,31 @@
 ---
 name: nvc-style
 description: Use for conflict de-escalation where observations, feelings, needs, and concrete requests can clarify communication. Avoid for safety risk, manipulation, or legal conflict.
+triggers:
+  - Person wants to say something difficult without escalating
+  - Conflict is tangled with blame or assumptions
+  - A concrete request would help clarify communication
+  - Needs are unclear and driving frustration
+  - De-escalation through structured expression is appropriate
+blockers:
+  - Blame-heavy draft message that needs conversion to observation and feeling
+  - Vague frustration hiding an unexpressed need
+  - Boundary need requiring a specific and time-bounded request
+  - Unsafe contact situation where vulnerable disclosure would increase harm
+safety:
+  - Do not use empathy language to pressure unsafe contact, excuse harm, or negotiate with coercion
+  - Do not use empathy language to excuse harm or pressure someone into unsafe contact
+  - Hand off for coercion, threats, abuse risk, legal conflict, HR or formal disputes, or any situation where direct contact may increase harm
+  - Avoid if safety or bad faith is present
 ---
 
 # NVC Style
 
-Use this skill to help a person express conflict through observations, feelings, needs, and requests.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Help a person express conflict through observations, feelings, needs, and requests.
 
 ## Use When
 

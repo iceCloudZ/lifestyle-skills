@@ -9,11 +9,14 @@ import { randomInt } from "node:crypto";
 import { dirname, isAbsolute, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  defaultRoot as libDefaultRoot,
+  findRegistryEntry,
+  loadSkillBundle as readSkillBundle
+} from "../lib/load-skill.mjs";
+import {
   buildWithSkillInstructions,
   defaultRoot,
-  findRegistryEntry,
-  loadEvalCases,
-  readSkillBundle
+  loadEvalCases
 } from "./build-eval-prompts.mjs";
 
 function readJson(path) {

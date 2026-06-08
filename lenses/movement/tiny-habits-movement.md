@@ -1,11 +1,31 @@
 ---
 name: tiny-habits-movement
 description: Use when someone repeatedly fails exercise plans, has low motivation, or needs movement habits anchored to existing routines. Avoid for advanced athletes needing periodized training.
+triggers:
+  - Person has failed several exercise plans
+  - Time, motivation, or confidence is low
+  - First goal is consistency, not performance
+  - Movement habits need anchoring to existing daily routines
+  - Busy schedule requires very small, repeatable actions
+blockers:
+  - No time perceived for any exercise
+  - Low confidence that any plan will stick
+  - Forgetting to do the planned movement
+  - Shame cycle from past failures undermining new attempts
+safety:
+  - Keep movements pain-free, tiny, and non-shaming
+  - Do not prescribe intensity or progression before consistency
+  - Do not frame inconsistency as laziness
+  - Hand off for acute pain, medical restrictions, advanced training goals, or cases where mental health support is more relevant than habit design
 ---
 
 # Tiny Habits Movement
 
-Use this skill to convert movement goals into tiny, easy behaviors attached to existing routines.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Convert movement goals into tiny, easy behaviors attached to existing routines.
 
 ## Use When
 

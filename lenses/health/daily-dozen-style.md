@@ -1,11 +1,31 @@
 ---
 name: daily-dozen-style
 description: Use for everyday nutrition habit questions where a simple plant-forward checklist can improve meal quality. Avoid for eating disorder risk, strict medical diets, or complex allergies.
+triggers:
+  - Person asks how to eat healthier day to day
+  - Household wants practical grocery or meal upgrades
+  - A plant-forward checklist feels motivating rather than stressful
+  - Person wants to build a daily nutrition habit without strict rules
+  - Simple additive food choices can improve meal quality
+blockers:
+  - Takeout-heavy diet with few whole-food options
+  - Family resistance to dietary changes
+  - Grocery planning overwhelm from too many changes at once
+  - Tracking anxiety when checklist feels rigid rather than supportive
+safety:
+  - Add before subtracting; avoid weight-loss prescriptions, medical diets, and obsessive tracking
+  - Do not prescribe diets for medical conditions or weight-loss treatment
+  - Hand off for eating disorder risk, medical nutrition therapy, severe allergies, pregnancy-specific nutrition, or clinician-directed diets
+  - Avoid when tracking creates anxiety or medical constraints dominate
 ---
 
 # Daily Dozen Style
 
-Use this skill to help a household improve nutrition quality through a simple food checklist lens.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Help a household improve nutrition quality through a simple food checklist lens.
 
 ## Use When
 

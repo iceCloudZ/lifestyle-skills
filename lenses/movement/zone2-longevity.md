@@ -1,11 +1,31 @@
 ---
 name: zone2-longevity
 description: Use for sustainable aerobic base building, long-term cardiovascular fitness, and low-friction cardio routines. Avoid for acute injury, exercise restrictions, or people who need medical clearance.
+triggers:
+  - Person wants better long-term cardio fitness
+  - Person is sedentary or inconsistent but can safely exercise
+  - Goal is sustainable aerobic base building rather than racing performance
+  - Low-injury-risk cardio routine is needed
+  - Conversational-intensity movement fits the person's current capacity
+blockers:
+  - Sedentary baseline making even short sessions feel ambitious
+  - Over-reliance on wearable data instead of perceived effort
+  - Tendency to start too hard and lose consistency
+  - No obvious low-friction aerobic option available
+safety:
+  - Use perceived effort or talk test for most users; stop and seek care for chest pain, dizziness, faintness, or unusual shortness of breath
+  - Advise medical clearance for concerning symptoms or known restrictions
+  - Hand off for chest pain, dizziness, fainting, severe breathlessness, acute injury, known restrictions, or return-to-exercise after major medical events
+  - Do not use when there is acute injury, chest pain, dizziness, or medical restriction
 ---
 
 # Zone 2 Longevity
 
-Use this skill to build aerobic capacity through steady, sustainable, conversational-intensity movement.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Build aerobic capacity through steady, sustainable, conversational-intensity movement.
 
 ## Use When
 

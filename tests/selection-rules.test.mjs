@@ -9,11 +9,10 @@ function read(path) {
   return readFileSync(join(root, path), "utf8");
 }
 
-test("life-butler explicitly loads the scoring model for lens choice", () => {
+test("life-butler references selection rules for lens choice", () => {
   const skill = read("skills/life-butler/SKILL.md");
 
-  assert.match(skill, /scoring-model\.md/);
-  assert.match(skill, /registry\.json/);
+  assert.match(skill, /selection-rules\.md/);
 });
 
 test("scoring model defines explainable score factors and confirmation", () => {

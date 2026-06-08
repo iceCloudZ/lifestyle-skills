@@ -1,12 +1,13 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  loadSkillBundle as readSkillBundle,
+  findRegistryEntry,
+  defaultRoot as libRoot
+} from "../lib/load-skill.mjs";
 
-export const defaultRoot = new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
-
-function readJson(path) {
-  return JSON.parse(readFileSync(path, "utf8"));
-}
+export const defaultRoot = libRoot;
 
 function walkJsonlFiles(dir) {
   const files = [];
@@ -33,31 +34,6 @@ export function loadEvalCases(root = defaultRoot) {
     }
   }
   return cases.sort((a, b) => a.id.localeCompare(b.id));
-}
-
-export function findRegistryEntry(root, id) {
-  const registry = readJson(join(root, "registry.json"));
-  return registry.skills.find((skill) => skill.id === id);
-}
-
-export function readSkillBundle(root, entry) {
-  if (!entry) return "";
-
-  const main = readFileSync(join(root, entry.path), "utf8");
-  if (entry.id !== "life-butler") return main;
-
-  const refs = [
-    "skills/life-butler/references/no-data-mode.md",
-    "skills/life-butler/references/lens-catalog.md",
-    "skills/life-butler/references/selection-rules.md",
-    "skills/life-butler/references/scoring-model.md"
-  ];
-
-  const referenceText = refs
-    .map((path) => `\n\n## ${path}\n\n${readFileSync(join(root, path), "utf8")}`)
-    .join("");
-
-  return `${main}${referenceText}`;
 }
 
 export function buildWithSkillInstructions(entry) {

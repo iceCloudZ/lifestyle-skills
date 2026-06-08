@@ -1,11 +1,31 @@
 ---
 name: conscious-spending
 description: Use for household finance questions where the person wants spending clarity, values-aligned trade-offs, and less shame around money. Do not use for debt crisis, emergency cash shortage, or regulated financial advice.
+triggers:
+  - Household has stable income but feels unclear about where money goes
+  - Person wants more enjoyment from spending without guilt
+  - Strict or punitive budgeting approaches have failed
+  - Spending decisions feel misaligned with personal values
+  - Person is balancing joy, obligations, savings, and guilt
+blockers:
+  - Shame spiral about past spending habits
+  - Conflict between couple about spending categories
+  - Fixed-cost pressure making it hard to protect joyful spending
+  - Guilt overriding clear-headed trade-off decisions
+safety:
+  - Keep recommendations category-level; do not recommend specific investments, loans, insurance products, or tax actions
+  - Hand off for debt default, legal or tax questions, product recommendations, or financial abuse
+  - Do not use when there is a debt crisis or no emergency buffer
+  - Do not use when the person asks which security, fund, insurance, or loan product to buy
 ---
 
 # Conscious Spending
 
-Use this skill to help a household align spending with values, joy, obligations, and future goals.
+Apply this lens directly. Do not offer lens choices or route back to the entry skill. The user has selected this thinking framework.
+
+## Purpose
+
+Help a household align spending with values, joy, obligations, and future goals.
 
 ## Use When
 
