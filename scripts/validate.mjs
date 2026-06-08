@@ -41,6 +41,7 @@ function validateRegistryEntry(entry, index) {
   const required = [
     "id",
     "name",
+    "skill_type",
     "domain",
     "path",
     "description",
@@ -56,19 +57,28 @@ function validateRegistryEntry(entry, index) {
   }
 
   assert(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.id || ""), `${prefix}.id must be kebab-case`);
-  assert(["finance", "health", "movement", "family"].includes(entry.domain), `${prefix}.domain is invalid`);
+  assert(["entry", "lens"].includes(entry.skill_type), `${prefix}.skill_type is invalid`);
+  assert(["life", "finance", "health", "movement", "family"].includes(entry.domain), `${prefix}.domain is invalid`);
   assert(["low", "medium", "high"].includes(entry.risk_level), `${prefix}.risk_level is invalid`);
 
   for (const key of ["best_for", "avoid_if", "required_context", "style"]) {
     assert(Array.isArray(entry[key]), `${prefix}.${key} must be an array`);
   }
 
-  const skillPath = join(root, entry.path);
-  assert(existsSync(skillPath), `${entry.path} does not exist`);
-  if (existsSync(skillPath)) {
-    const meta = parseFrontmatter(skillPath);
-    assert(meta.name === entry.id, `${entry.path} frontmatter name must equal registry id ${entry.id}`);
-    assert(Boolean(meta.description), `${entry.path} frontmatter description is required`);
+  const contentPath = join(root, entry.path);
+  assert(existsSync(contentPath), `${entry.path} does not exist`);
+
+  if (entry.skill_type === "entry") {
+    assert(entry.path.startsWith("skills/"), `${prefix}.path for entry skill must be under skills/`);
+    if (existsSync(contentPath)) {
+      const meta = parseFrontmatter(contentPath);
+      assert(meta.name === entry.id, `${entry.path} frontmatter name must equal registry id ${entry.id}`);
+      assert(Boolean(meta.description), `${entry.path} frontmatter description is required`);
+    }
+  }
+
+  if (entry.skill_type === "lens") {
+    assert(entry.path.startsWith("lenses/"), `${prefix}.path for lens must be under lenses/`);
   }
 
   const evalPath = join(root, "evals", entry.domain, `${entry.id}.jsonl`);
@@ -112,7 +122,7 @@ function validateEvalFile(path) {
 
 const registry = readJson(join(root, "registry.json"));
 assert(Boolean(registry), "registry.json is required");
-assert(registry?.schema_version === "0.1.0", "registry.schema_version must be 0.1.0");
+assert(registry?.schema_version === "0.2.0", "registry.schema_version must be 0.2.0");
 assert(Array.isArray(registry?.skills), "registry.skills must be an array");
 
 const ids = new Set();

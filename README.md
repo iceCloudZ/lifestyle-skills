@@ -1,59 +1,96 @@
 # Lifestyle Skills
 
-Local-first lifestyle skills for AI agents.
+Local-first lifestyle reasoning skills for AI agents.
 
-This repository collects reusable `SKILL.md` thinking modules for household and personal life domains such as finance, health, movement, and family relationships.
+This repository is built around one user-facing entry skill:
 
-The goal is not to provide professional financial, medical, legal, or psychological advice. The goal is to give local agents structured, auditable reasoning styles that help them choose better questions, safer trade-offs, and more actionable next steps.
+```text
+skills/life-butler/SKILL.md
+```
 
-## What This Is
+Users should start with `life-butler`. It guides the first conversation, asks one useful question when there is no data, presents 2-3 suitable lifestyle lenses, recommends one, and lets the user choose before applying it.
 
-- A skill library for lifestyle reasoning.
-- A registry of machine-readable skill metadata.
-- A starter eval set for testing when a skill should or should not be used.
-- A local-first building block for products such as LifeOps.
+The other files are lenses, not entry skills. They should not compete for initial triggering.
 
-## What This Is Not
+## Why This Shape
 
-- Not an MCP server.
-- Not a tool adapter.
-- Not a chatbot frontend.
-- Not a source of professional advice.
-- Not an imitation of any real person.
+A first-time user usually has no local household data, no member profile, and no history to review. A good lifestyle skill must start by guiding the user, not by pretending it already knows the family.
+
+The intended first-use flow is:
+
+```text
+user asks a lifestyle question
+  -> life-butler triggers
+  -> no-data mode if needed
+  -> ask one key question
+  -> offer 2-3 lenses
+  -> user chooses
+  -> answer with the chosen lens
+```
 
 ## Repository Layout
 
 ```text
-skills/      Skill folders. Each skill has a SKILL.md file.
-schemas/     JSON schema for skill registry entries.
-evals/       Synthetic eval cases for routing and output quality.
-examples/    Synthetic member profiles and household context.
-scripts/     Local validation scripts.
+skills/
+  life-butler/
+    SKILL.md
+    references/
+      lens-catalog.md
+      no-data-mode.md
+      selection-rules.md
+lenses/
+  finance/
+  health/
+  movement/
+  family/
+registry.json
+schemas/
+evals/
+tests/
+scripts/
 ```
 
-## MVP Domains
+## Lenses
 
-- `finance`: spending, budgeting, long-term investing principles.
-- `health`: long-term health, lifestyle patterns, nutrition habits.
-- `movement`: aerobic base, strength baseline, tiny movement habits.
-- `family`: relationship repair, nonviolent communication, positive discipline.
+Lenses are thinking modes. They are not personas, agents, or professional advisors.
 
-## Validate Locally
+Current MVP lenses:
+
+- Finance: conscious spending, Bogleheads-style, zero-based budgeting.
+- Health: longevity medicine, Blue Zones-style, Daily Dozen-style.
+- Movement: Zone 2 longevity, strength baseline, tiny habits movement.
+- Family: Gottman-style, NVC-style, positive discipline-style.
+
+## Testing
+
+Static tests run in CI:
 
 ```bash
+node --test tests/*.test.mjs
 node scripts/validate.mjs
 ```
 
+LLM evals are intentionally not part of default CI. They should run manually or on a scheduled job because model outputs are slower, probabilistic, and may depend on external providers.
+
 ## CI/CD
 
-This repo starts with CI only:
+This repo uses CI only in the first phase.
 
-- validate registry shape
-- validate `SKILL.md` files exist
-- validate eval case JSONL files
-- check registry paths
+CI validates:
 
-There is no CD in the first phase. Publishing should stay manual until the schema, evals, and contribution process stabilize.
+- registry shape
+- entry skill existence
+- lens paths
+- `SKILL.md` frontmatter for entry skills
+- eval JSONL syntax
+
+There is no CD yet. Release automation, tarballs, and marketplace packaging should wait until the first-use flow and eval strategy are stable.
+
+## Safety
+
+Lifestyle lenses can help organize thinking, but they do not replace professional financial, medical, legal, psychological, or emergency support.
+
+Do not send private household data to third-party eval models. Use synthetic eval cases unless the user explicitly chooses a local/private evaluation flow.
 
 ## License
 

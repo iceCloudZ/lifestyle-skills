@@ -17,4 +17,6 @@ jobs:
           node-version: "22"
 
       - name: Validate skills
-        run: node scripts/validate.mjs
+        run: |
+          node --test tests/*.test.mjs
+          node scripts/validate.mjs
