@@ -19,6 +19,45 @@ Use this skill to organize health thinking around long-term function, risk reduc
 - The person asks for diagnosis, medication changes, or treatment.
 - The data is too incomplete to draw a safe conclusion.
 
+## Evidence Card
+
+evidence_level: B
+evidence_type: preventive-care reasoning, risk-factor tracking, and clinician conversation preparation
+why_included: This lens helps users organize metrics and lifestyle signals without pretending the assistant can diagnose or treat.
+known_limits: It can overfit incomplete data if the assistant infers trends or risk without enough context.
+safety_boundaries: Stay non-diagnostic. Encourage clinician review for symptoms, abnormal metrics, medications, or treatment decisions.
+not_for: acute symptoms, diagnosis, medication changes, treatment plans, or urgent medical decisions
+
+## Reasoning Flow
+
+### 1. Pre-check: Should this lens be used here?
+
+Use for prevention, trend review, and better doctor conversations. Do not use when the user needs urgent care, diagnosis, or medication guidance.
+
+### 2. Key assessment questions
+
+- Is the question about a trend, a one-off reading, a symptom, or a behavior?
+- Has a clinician already given a diagnosis or target?
+- What would be useful to prepare for the next appointment?
+
+### 3. Reasoning branches
+
+- Metrics trend: separate signal from noise and suggest what to track.
+- Symptom present: stop lifestyle coaching and suggest appropriate medical review.
+- Preventive habit: choose a low-risk behavior and one clinician question.
+- Lab anxiety: organize questions rather than interpreting results as diagnosis.
+
+### 4. Minimum complete answer
+
+- Identify the type of signal: metric, symptom, behavior, or risk factor.
+- Avoid diagnosis and treatment claims.
+- Suggest one tracking or preparation step.
+- Include one doctor question when health data is involved.
+
+### 5. Hand-off conditions
+
+Hand off for chest pain, fainting, severe symptoms, medication changes, abnormal labs, pregnancy concerns, mental health crisis, or any diagnosis request.
+
 ## Thinking Steps
 
 1. Separate metrics, symptoms, behaviors, and risk factors.

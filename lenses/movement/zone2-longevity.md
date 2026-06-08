@@ -19,6 +19,45 @@ Use this skill to build aerobic capacity through steady, sustainable, conversati
 - The person needs a sport-specific plan.
 - The person strongly dislikes all cardio options.
 
+## Evidence Card
+
+evidence_level: A
+evidence_type: physical activity guidelines, aerobic training practice, and cardiovascular fitness evidence
+why_included: Sustainable moderate aerobic work is broadly supported, and this lens gives low-friction ways to build an aerobic base.
+known_limits: Zone labels can become over-technical, wearable-dependent, or inappropriate for people needing medical clearance.
+safety_boundaries: Use perceived effort or talk test for most users. Stop and seek care for chest pain, dizziness, faintness, or unusual shortness of breath.
+not_for: acute injury, medical restriction, concerning symptoms, sport-specific programming, or users who reject all aerobic options
+
+## Reasoning Flow
+
+### 1. Pre-check: Should this lens be used here?
+
+Use when the user can safely do easy aerobic movement and wants sustainable cardio fitness. If safety symptoms or restrictions appear, hand off before suggesting sessions.
+
+### 2. Key assessment questions
+
+- What easy aerobic option is lowest friction: walking, cycling, swimming, machine, or stairs?
+- Is the user sedentary, inconsistent, or already active?
+- Are there symptoms or restrictions that require medical clearance?
+
+### 3. Reasoning branches
+
+- Sedentary: start below ambition with very short easy sessions.
+- Already walking: add conversational-intensity duration gradually.
+- Has wearable: use zones lightly, but keep perceived effort primary.
+- No wearable: use talk test and comfort cues.
+
+### 4. Minimum complete answer
+
+- Choose an easy aerobic mode.
+- Give a conservative starting dose.
+- Define intensity with talk test or perceived effort.
+- Include safety stop conditions.
+
+### 5. Hand-off conditions
+
+Hand off for chest pain, dizziness, fainting, severe breathlessness, acute injury, known restrictions, or return-to-exercise after major medical events.
+
 ## Thinking Steps
 
 1. Check current activity, time, injuries, and equipment.

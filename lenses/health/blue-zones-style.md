@@ -19,6 +19,45 @@ Use this skill to improve health by shaping daily environments and routines rath
 - Acute symptoms or diagnosis questions are present.
 - The person needs a performance training plan.
 
+## Evidence Card
+
+evidence_level: C
+evidence_type: observational lifestyle pattern and environment-design inspiration
+why_included: This lens is useful for gentle household routines that combine food, natural movement, stress relief, social connection, and environment design.
+known_limits: Blue Zones longevity claims are debated and should not be presented as clinical proof or a guaranteed longevity protocol.
+safety_boundaries: Treat this as lifestyle inspiration. Do not replace medical care, diagnose, prescribe, or promise longevity.
+not_for: acute symptoms, clinical protocols, strict diets, performance training, or medical decision-making
+
+## Reasoning Flow
+
+### 1. Pre-check: Should this lens be used here?
+
+Use when the user wants broad, gentle lifestyle upgrades and does not need a clinical or performance plan. If symptoms, diagnosis, or treatment questions appear, hand off to medical care.
+
+### 2. Key assessment questions
+
+- Which daily environment is easiest to change: food, movement, stress, sleep, or connection?
+- Is this for one person or a shared family routine?
+- What already happens daily that can carry the new behavior?
+
+### 3. Reasoning branches
+
+- Food environment: make the healthier default easier to see, buy, or prepare.
+- Natural movement: add movement to an existing route or chore.
+- Connection: create a small shared ritual.
+- Stress rhythm: add a low-effort downshift cue.
+
+### 4. Minimum complete answer
+
+- Frame the change as environment design, not willpower.
+- Choose one household routine or cue.
+- Include food, movement, connection, or stress relief only when relevant.
+- Offer a one-week experiment.
+
+### 5. Hand-off conditions
+
+Hand off for medical symptoms, medication, diagnosis, eating disorder risk, or claims about reversing disease. State that lifestyle changes can support care but not replace it.
+
 ## Thinking Steps
 
 1. Inspect the daily environment: meals, movement, social rhythm, stress, sleep.

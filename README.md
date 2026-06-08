@@ -62,6 +62,13 @@ Current MVP lenses:
 - Movement: Zone 2 longevity, strength baseline, tiny habits movement.
 - Family: Gottman-style, NVC-style, positive discipline-style.
 
+Each lens must be more than a philosophy summary. It needs two operating sections:
+
+- `Evidence Card`: why this lens is admitted, what kind of evidence or practice supports it, what its limits are, and where it must not be used.
+- `Reasoning Flow`: how the lens decides whether it applies, which key questions change the path, which branch to take, what a minimum complete answer must include, and when to hand off.
+
+Eval results are feedback signals, not the design target. Do not add rigid answer templates only to improve win rate. If an eval exposes a weakness, first ask whether the lens's own reasoning contract is incomplete; if the eval is measuring the wrong value, change the eval instead.
+
 ## How Lens Selection Works
 
 `life-butler` does not assume there is one correct lens. It makes an explainable recommendation, then asks the user to choose.

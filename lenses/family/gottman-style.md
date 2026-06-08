@@ -19,6 +19,45 @@ Use this skill to support relationship repair, friendship, gentle starts, and co
 - The person asks who is right.
 - Legal, custody, or crisis intervention is needed.
 
+## Evidence Card
+
+evidence_level: B
+evidence_type: couples-therapy framework, relationship research, and clinical practice
+why_included: This lens gives concrete repair, gentle start-up, and connection tools for recurring conflict without deciding who is right.
+known_limits: Evidence strength varies by setting, and the assistant cannot assess abuse dynamics or replace therapy.
+safety_boundaries: Screen for safety. Do not encourage reconciliation, vulnerability, or joint conversation where abuse or coercive control may be present.
+not_for: abuse risk, intimidation, coercive control, legal conflict, custody disputes, or crisis intervention
+
+## Reasoning Flow
+
+### 1. Pre-check: Should this lens be used here?
+
+Use when the goal is repair, connection, or a better next conversation in a generally safe relationship. If safety is uncertain, pause and ask one safety-oriented question or hand off.
+
+### 2. Key assessment questions
+
+- Is there any fear, intimidation, or retaliation risk?
+- Is the current need repair after conflict, a gentle start, or noticing bids for connection?
+- What is one small interaction that could change the pattern?
+
+### 3. Reasoning branches
+
+- Conflict heat: lower intensity and use a gentle start-up.
+- Disconnection: notice bids and create a small positive ritual.
+- Recurring pattern: name the cycle without assigning blame.
+- Repair needed: suggest one repair attempt or apology phrase.
+
+### 4. Minimum complete answer
+
+- Avoid deciding who is right.
+- Name the interaction pattern or repair opportunity.
+- Include a gentle sentence or repair attempt.
+- Include a safety boundary when relevant.
+
+### 5. Hand-off conditions
+
+Hand off for abuse, coercive control, intimidation, threats, legal disputes, custody issues, or crisis-level conflict.
+
 ## Thinking Steps
 
 1. Lower the heat before solving the issue.

@@ -19,6 +19,45 @@ Use this skill to help parents respond with both kindness and firmness while tea
 - The child may need clinical support.
 - The situation requires school, legal, or medical intervention.
 
+## Evidence Card
+
+evidence_level: C
+evidence_type: parenting education framework and child skill-building practice
+why_included: This lens helps parents combine warmth, limits, encouragement, and repair instead of swinging between punishment and permissiveness.
+known_limits: It is not clinical child assessment and may underfit neurodevelopmental, trauma, school, or safety issues.
+safety_boundaries: Do not shame, threaten, use physical punishment, or suggest unsafe natural consequences.
+not_for: child safety risk, abuse risk, clinical support needs, school/legal intervention, or medical concerns
+
+## Reasoning Flow
+
+### 1. Pre-check: Should this lens be used here?
+
+Use when a parent needs a kind but firm response to ordinary behavior, routine, or cooperation problems. If safety, abuse, or clinical concerns appear, hand off.
+
+### 2. Key assessment questions
+
+- What is the child's approximate age and behavior?
+- What skill is missing: regulation, planning, responsibility, repair, or cooperation?
+- What boundary must stay firm?
+
+### 3. Reasoning branches
+
+- Limit setting: state the boundary calmly and offer a limited choice.
+- Skill gap: name the skill being practiced and create a small routine.
+- Repair after conflict: reconnect first, then practice a repair action.
+- Parent escalation: lower the parent's script to one respectful sentence.
+
+### 4. Minimum complete answer
+
+- Combine kindness and firmness.
+- Name the boundary or expectation.
+- Identify the skill being taught.
+- Provide one short parent script.
+
+### 5. Hand-off conditions
+
+Hand off for safety risk, abuse, self-harm, violence, suspected developmental or mental health needs, school/legal intervention, or medical concerns.
+
 ## Thinking Steps
 
 1. Identify the child's age, behavior, and unmet skill.

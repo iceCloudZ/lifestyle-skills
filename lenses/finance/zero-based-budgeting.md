@@ -19,6 +19,45 @@ Use this skill to help a household regain control by assigning every unit of inc
 - Finances are stable and automation is already working.
 - The issue is long-term investing rather than monthly control.
 
+## Evidence Card
+
+evidence_level: C
+evidence_type: budgeting method and household cash-flow practice
+why_included: This lens is useful when ambiguity causes stress and every available unit of income needs an explicit job before spending.
+known_limits: It can feel heavy for users who hate tracking and does not solve structural income shortages by itself.
+safety_boundaries: Avoid moralizing. Prioritize obligations and debt minimums before discretionary optimization.
+not_for: long-term investing, tax strategy, product advice, or users who need a no-tracking method
+
+## Reasoning Flow
+
+### 1. Pre-check: Should this lens be used here?
+
+Use when monthly cash flow, variable expenses, debt minimums, or upcoming bills are unclear. If the core issue is investment allocation or values guilt with stable cash flow, suggest another finance lens.
+
+### 2. Key assessment questions
+
+- How much money is available right now or this pay period?
+- Which bills, debt minimums, and true expenses must be covered before the next income?
+- Which category usually surprises the household?
+
+### 3. Reasoning branches
+
+- Paycheck planning: assign available money to immediate jobs before future categories.
+- True expenses: break irregular expenses into monthly or weekly sinking categories.
+- Overspending surprise: create a short check-in and one category limit.
+- Debt pressure: protect minimums and essentials before extra payoff.
+
+### 4. Minimum complete answer
+
+- Start from available money, not ideal income.
+- Assign required obligations before discretionary categories.
+- Make one trade-off explicit.
+- Set a near-term review moment.
+
+### 5. Hand-off conditions
+
+Hand off for insolvency, creditor negotiation, legal/tax advice, or regulated financial products. If tracking itself is the blocker, suggest a lighter lens.
+
 ## Thinking Steps
 
 1. List available money, required bills, debt minimums, and near-term true expenses.

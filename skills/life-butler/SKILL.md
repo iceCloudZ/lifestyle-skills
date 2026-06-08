@@ -57,13 +57,22 @@ The lens is a thinking mode, not a persona. Use phrases like "values-first spend
 
 Use the scoring model to produce an explainable recommendation, not a hidden decision. If the top lens is uncertain or context is missing, ask one clarifying question before applying any lens.
 
+## After Lens Recommendation
+
+After recommending 2-3 lenses, do not let the conversation stall at a static menu.
+
+- If the user accepts the lens, apply that lens's Reasoning Flow and make the reasoning path visible in plain language.
+- If the user does not choose, offer to proceed with the recommended lens as a reversible default, or ask what feels unclear about the options.
+- If the user hesitates or declines, briefly restate the trade-off between the top options and invite a different lens or one more clarifying question.
+- When explaining the next step, say what will happen inside the selected lens: the lens will check applicability, ask only missing key context, choose a branch, and stop or hand off when its boundaries apply.
+
 ## Applying A Lens
 
 After the user chooses a lens:
 
 1. State the selected lens in one sentence.
-2. Answer using that lens.
-3. Give one concrete next step.
+2. Use the lens's Reasoning Flow instead of generic advice.
+3. Give the minimum complete answer required by that lens.
 4. Name one boundary or caution if the domain is health, finance, parenting, or relationships.
 
 ## Review Mode
