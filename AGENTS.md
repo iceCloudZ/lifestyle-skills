@@ -7,11 +7,34 @@ This repository uses a single entry skill plus non-triggering lenses.
 ```text
 skills/life-butler/SKILL.md   # only user-facing entry skill
 lenses/{domain}/{lens}.md     # selectable thinking lenses, not standalone skills
-registry.json                 # machine-readable catalog
+lib/load-skill.mjs             # shared data loader for scripts and future SDK
+registry.json                  # machine-readable catalog
 evals/                        # synthetic routing and behavior cases
 ```
 
 Do not add a new `skills/{domain}/SKILL.md` for every lifestyle philosophy. Add a lens instead, then register it in `registry.json`.
+
+## Lens Frontmatter
+
+Every lens must include these YAML frontmatter fields:
+
+- `name`: kebab-case identifier matching the registry id
+- `description`: one-line summary for indexing
+- `triggers`: list of natural-language phrases describing when this lens applies
+- `blockers`: list of common obstacles this lens addresses
+- `safety`: list of safety rules and boundaries
+
+The frontmatter is the single source of structured metadata. `registry.json` holds additional fields (best_for, avoid_if, style, risk_level) that complement the frontmatter but do not duplicate it.
+
+## Progressive Disclosure
+
+Loading happens in three tiers:
+
+1. **Level 1 (index)**: `lib/load-skill.mjs` → `loadSkillMetadata()` returns name, description, triggers, blockers for all skills
+2. **Level 2 (skill)**: Load the full SKILL.md for the matched skill or lens
+3. **Level 3 (references)**: Load `selection-rules.md`, `scoring-model.md`, or specific lens files only when needed
+
+Do not load all references upfront. The entry skill embeds a Lens Index table for basic routing and reads detailed references on demand.
 
 ## Development
 
@@ -45,4 +68,4 @@ API eval credentials must come from environment variables. Never write keys to t
 
 ## Release
 
-There is no CD yet. Keep publishing manual until the entry flow, lens format, and eval strategy stabilize.
+Releases are automated via CI. Push a version tag to trigger the release workflow.

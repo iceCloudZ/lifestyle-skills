@@ -1,0 +1,28 @@
+{
+  "name": "lifestyle-skills",
+  "version": "0.3.0",
+  "description": "Local-first lifestyle reasoning skills for AI agents",
+  "type": "module",
+  "files": [
+    "skills/",
+    "lenses/",
+    "lib/",
+    "registry.json",
+    "schemas/"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "validate": "node scripts/validate.mjs",
+    "eval:list": "node scripts/build-eval-prompts.mjs --list",
+    "eval:build": "node scripts/build-eval-prompts.mjs --all --out generated/eval-prompts",
+    "scoreboard": "node scripts/build-scoreboard.mjs --out SCOREBOARD.md"
+  },
+  "license": "MIT",
+  "keywords": [
+    "lifestyle",
+    "ai-skills",
+    "agent-skills",
+    "claude-code",
+    "lens"
+  ]
+}

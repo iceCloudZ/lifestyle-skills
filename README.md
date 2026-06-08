@@ -28,12 +28,14 @@ user asks a lifestyle question
   -> answer with the chosen lens
 ```
 
+For mixed-domain questions (e.g. postpartum recovery spanning movement + health), life-butler can recommend a primary lens with a supporting lens that contributes safety boundaries.
+
 ## Repository Layout
 
 ```text
 skills/
   life-butler/
-    SKILL.md
+    SKILL.md                    # entry skill with embedded Lens Index
     references/
       lens-catalog.md
       no-data-mode.md
@@ -44,6 +46,8 @@ lenses/
   health/
   movement/
   family/
+lib/
+  load-skill.mjs               # shared data loader
 registry.json
 schemas/
 evals/
@@ -55,42 +59,51 @@ scripts/
 
 Lenses are thinking modes. They are not personas, agents, or professional advisors.
 
-Current MVP lenses:
+Current lenses:
 
 - Finance: conscious spending, Bogleheads-style, zero-based budgeting.
 - Health: longevity medicine, Blue Zones-style, Daily Dozen-style.
 - Movement: Zone 2 longevity, strength baseline, tiny habits movement.
 - Family: Gottman-style, NVC-style, positive discipline-style.
 
-Each lens must be more than a philosophy summary. It needs two operating sections:
+Each lens has structured YAML frontmatter:
+
+```yaml
+name: bogleheads-style
+description: Use for long-term investing...
+triggers:
+  - asks about long-term investing principles
+  - wants simple portfolio hygiene
+blockers:
+  - foundation gap: no emergency fund
+safety:
+  - do not name specific securities
+```
+
+The frontmatter serves as the machine-readable index. Combined with `registry.json`, it provides all metadata needed for routing without parsing the full lens content.
+
+Each lens must also include:
 
 - `Evidence Card`: why this lens is admitted, what kind of evidence or practice supports it, what its limits are, and where it must not be used.
-- `Reasoning Flow`: how the lens decides whether it applies, which key questions change the path, which branch to take, what a minimum complete answer must include, and when to hand off.
+- `Reasoning Flow`: how the lens decides whether it applies, which branch to take, what a minimum complete answer must include, and when to hand off.
 
-Eval results are feedback signals, not the design target. Do not add rigid answer templates only to improve win rate. If an eval exposes a weakness, first ask whether the lens's own reasoning contract is incomplete; if the eval is measuring the wrong value, change the eval instead.
+## Progressive Disclosure
+
+Loading happens in three tiers to minimize token usage:
+
+| Level | When | What | Tokens |
+|-------|------|------|--------|
+| 1 | Session start | `lib/load-skill.mjs` → `loadSkillMetadata()` returns index for all skills | ~200 |
+| 2 | Skill invoked | Full SKILL.md for the matched entry skill or lens | ~500 |
+| 3 | Lens selected or tie-break needed | Specific lens file or `selection-rules.md` | ~1000 |
+
+In Claude Code, Level 1 corresponds to the skill frontmatter, Level 2 to the full SKILL.md, and Level 3 to on-demand file reads.
 
 ## How Lens Selection Works
 
 `life-butler` does not assume there is one correct lens. It makes an explainable recommendation, then asks the user to choose.
 
-Selection uses:
-
-- `registry.json` for machine-readable lens metadata.
-- `skills/life-butler/references/lens-catalog.md` for a human-readable catalog.
-- `skills/life-butler/references/selection-rules.md` for common blocker-to-lens mappings.
-- `skills/life-butler/references/scoring-model.md` for the recommendation protocol.
-
-The scoring model checks:
-
-```text
-domain_match
-intent_match
-blocker_match
-best_for_match
-avoid_if_risk
-missing_context
-confirmation_required
-```
+The embedded Lens Index table provides enough metadata for basic routing. When the fit is uncertain, `selection-rules.md` and `scoring-model.md` provide detailed blocker-to-lens mappings and a recommendation protocol.
 
 For example:
 
@@ -259,17 +272,23 @@ Do not treat the scoreboard as scientific proof. It is an iteration tool for tri
 
 ## CI/CD
 
-This repo uses CI only in the first phase.
-
 CI validates:
 
 - registry shape
-- entry skill existence
+- entry skill and lens frontmatter (name, description, triggers, blockers, safety)
 - lens paths
-- `SKILL.md` frontmatter for entry skills
 - eval JSONL syntax
 
-There is no CD yet. Release automation, tarballs, and marketplace packaging should wait until the first-use flow and eval strategy are stable.
+### Release
+
+Push a version tag to trigger the release workflow:
+
+```bash
+git tag v0.3.0
+git push origin v0.3.0
+```
+
+The release workflow validates, runs tests, packages a tarball, and creates a GitHub release.
 
 ## Safety
 
