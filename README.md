@@ -37,6 +37,7 @@ skills/
     references/
       lens-catalog.md
       no-data-mode.md
+      scoring-model.md
       selection-rules.md
 lenses/
   finance/
@@ -60,6 +61,42 @@ Current MVP lenses:
 - Health: longevity medicine, Blue Zones-style, Daily Dozen-style.
 - Movement: Zone 2 longevity, strength baseline, tiny habits movement.
 - Family: Gottman-style, NVC-style, positive discipline-style.
+
+## How Lens Selection Works
+
+`life-butler` does not assume there is one correct lens. It makes an explainable recommendation, then asks the user to choose.
+
+Selection uses:
+
+- `registry.json` for machine-readable lens metadata.
+- `skills/life-butler/references/lens-catalog.md` for a human-readable catalog.
+- `skills/life-butler/references/selection-rules.md` for common blocker-to-lens mappings.
+- `skills/life-butler/references/scoring-model.md` for the recommendation protocol.
+
+The scoring model checks:
+
+```text
+domain_match
+intent_match
+blocker_match
+best_for_match
+avoid_if_risk
+missing_context
+confirmation_required
+```
+
+For example:
+
+```text
+"I want to exercise but never stick with it"
+  -> domain: movement
+  -> blocker: consistency
+  -> candidates: tiny-habits-movement, zone2-longevity, strength-baseline
+  -> recommendation: tiny-habits-movement
+  -> user still chooses before the lens is applied
+```
+
+This keeps first use lightweight while still leaving room for LifeOps or another local-first app to use member profiles and history later.
 
 ## Testing
 
