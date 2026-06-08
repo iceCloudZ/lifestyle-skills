@@ -1,0 +1,9 @@
+{
+  "id": "relationship-repair",
+  "age": 41,
+  "household_role": "partner",
+  "goals": ["repair_conflict", "reduce_reactivity"],
+  "constraints": ["busy_workweeks", "repeated_minor_conflicts"],
+  "preferences": ["short_scripts", "calm_tone"],
+  "safety_notes": ["synthetic_profile", "no_reported_safety_risk"]
+}

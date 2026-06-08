@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.1.0",
+  "skills": [
+    {
+      "id": "conscious-spending",
+      "name": "Conscious Spending",
+      "domain": "finance",
+      "path": "skills/finance/conscious-spending/SKILL.md",
+      "description": "Helps evaluate household spending through a values-first conscious spending lens.",
+      "best_for": ["high-income-low-clarity", "wants-more-enjoyment", "dislikes-strict-budgeting"],
+      "avoid_if": ["debt-crisis", "no-emergency-buffer", "needs-regulated-financial-advice"],
+      "required_context": ["income", "fixed_costs", "goals", "preferences"],
+      "style": ["values-first", "low-shame", "action-oriented"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "bogleheads-style",
+      "name": "Bogleheads Style",
+      "domain": "finance",
+      "path": "skills/finance/bogleheads-style/SKILL.md",
+      "description": "Frames long-term household investing around diversification, low cost, and risk capacity.",
+      "best_for": ["long-term-investing", "low-maintenance-portfolio", "risk-awareness"],
+      "avoid_if": ["short-term-trading", "unpaid-high-interest-debt", "needs-specific-security-selection"],
+      "required_context": ["time_horizon", "risk_tolerance", "debt_status", "emergency_fund"],
+      "style": ["long-term", "simple", "risk-aware"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "zero-based-budgeting",
+      "name": "Zero-Based Budgeting",
+      "domain": "finance",
+      "path": "skills/finance/zero-based-budgeting/SKILL.md",
+      "description": "Assigns each unit of income a job so a household can regain cash-flow control.",
+      "best_for": ["cash-flow-stress", "variable-expenses", "needs-clear-limits"],
+      "avoid_if": ["hates-detailed-tracking", "stable-automated-finances"],
+      "required_context": ["income", "bills", "debt_payments", "upcoming_expenses"],
+      "style": ["concrete", "constraint-first", "weekly-review"],
+      "risk_level": "low"
+    },
+    {
+      "id": "longevity-medicine",
+      "name": "Longevity Medicine",
+      "domain": "health",
+      "path": "skills/health/longevity-medicine/SKILL.md",
+      "description": "Uses a long-term prevention lens to organize health metrics, risks, and habits.",
+      "best_for": ["long-term-health", "metric-tracking", "preventive-care"],
+      "avoid_if": ["acute-symptoms", "medical-emergency", "needs-diagnosis"],
+      "required_context": ["age", "known_conditions", "metrics", "care_team"],
+      "style": ["preventive", "trend-aware", "doctor-deferential"],
+      "risk_level": "high"
+    },
+    {
+      "id": "blue-zones-style",
+      "name": "Blue Zones Style",
+      "domain": "health",
+      "path": "skills/health/blue-zones-style/SKILL.md",
+      "description": "Looks for low-friction lifestyle changes across food, movement, connection, and stress.",
+      "best_for": ["family-routine-change", "environment-design", "gentle-health-upgrade"],
+      "avoid_if": ["needs-clinical-protocol", "acute-symptoms"],
+      "required_context": ["daily_routine", "food_pattern", "social_context", "stressors"],
+      "style": ["environment-first", "whole-life", "low-pressure"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "daily-dozen-style",
+      "name": "Daily Dozen Style",
+      "domain": "health",
+      "path": "skills/health/daily-dozen-style/SKILL.md",
+      "description": "Uses a simple checklist lens to improve everyday nutrition quality.",
+      "best_for": ["nutrition-habit", "plant-forward-eating", "daily-checklist"],
+      "avoid_if": ["eating-disorder-risk", "strict-medical-diet", "food-allergy-complexity"],
+      "required_context": ["diet_pattern", "allergies", "constraints", "cooking_capacity"],
+      "style": ["checklist", "food-first", "incremental"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "zone2-longevity",
+      "name": "Zone 2 Longevity",
+      "domain": "movement",
+      "path": "skills/movement/zone2-longevity/SKILL.md",
+      "description": "Builds sustainable aerobic base training for long-term metabolic and cardiovascular fitness.",
+      "best_for": ["cardio-base", "long-term-fitness", "low-injury-risk"],
+      "avoid_if": ["acute-injury", "medical-exercise-restriction", "hates-cardio"],
+      "required_context": ["current_activity", "available_time", "injuries", "equipment"],
+      "style": ["steady", "sustainable", "trend-aware"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "strength-baseline",
+      "name": "Strength Baseline",
+      "domain": "movement",
+      "path": "skills/movement/strength-baseline/SKILL.md",
+      "description": "Establishes a simple strength foundation with progressive overload and safety boundaries.",
+      "best_for": ["wants-strength", "aging-resilience", "beginner-lifting"],
+      "avoid_if": ["acute-pain", "no-technique-support", "medical-exercise-restriction"],
+      "required_context": ["experience", "injuries", "equipment", "schedule"],
+      "style": ["simple", "progressive", "safety-first"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "tiny-habits-movement",
+      "name": "Tiny Habits Movement",
+      "domain": "movement",
+      "path": "skills/movement/tiny-habits-movement/SKILL.md",
+      "description": "Turns movement goals into very small behaviors anchored to existing routines.",
+      "best_for": ["low-motivation", "failed-previous-plans", "busy-schedule"],
+      "avoid_if": ["advanced-athlete", "needs-structured-training-cycle"],
+      "required_context": ["daily_routine", "barriers", "preferred_movements"],
+      "style": ["tiny", "nonjudgmental", "cue-based"],
+      "risk_level": "low"
+    },
+    {
+      "id": "gottman-style",
+      "name": "Gottman Style",
+      "domain": "family",
+      "path": "skills/family/gottman-style/SKILL.md",
+      "description": "Supports relationship reflection through repair, friendship, conflict patterns, and bids for connection.",
+      "best_for": ["couple-conflict", "repair-attempts", "relationship-maintenance"],
+      "avoid_if": ["abuse-risk", "coercive-control", "immediate-safety-risk"],
+      "required_context": ["relationship_context", "conflict_pattern", "desired_outcome"],
+      "style": ["repair-focused", "warm", "specific"],
+      "risk_level": "high"
+    },
+    {
+      "id": "nvc-style",
+      "name": "NVC Style",
+      "domain": "family",
+      "path": "skills/family/nvc-style/SKILL.md",
+      "description": "Reframes conflict through observations, feelings, needs, and concrete requests.",
+      "best_for": ["communication-conflict", "needs-clarity", "de-escalation"],
+      "avoid_if": ["safety-risk", "bad-faith-manipulation", "requires-legal-action"],
+      "required_context": ["facts", "feelings", "needs", "request_target"],
+      "style": ["nonviolent", "clear", "de-escalating"],
+      "risk_level": "medium"
+    },
+    {
+      "id": "positive-discipline-style",
+      "name": "Positive Discipline Style",
+      "domain": "family",
+      "path": "skills/family/positive-discipline-style/SKILL.md",
+      "description": "Helps parents respond with kind firmness, boundaries, encouragement, and long-term skill building.",
+      "best_for": ["parenting", "child-behavior", "family-boundaries"],
+      "avoid_if": ["child-safety-risk", "abuse-risk", "needs-clinical-child-support"],
+      "required_context": ["child_age", "behavior", "boundary", "parent_goal"],
+      "style": ["kind-and-firm", "teaching-focused", "long-term"],
+      "risk_level": "high"
+    }
+  ]
+}

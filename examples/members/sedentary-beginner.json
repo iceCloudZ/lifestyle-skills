@@ -1,0 +1,9 @@
+{
+  "id": "sedentary-beginner",
+  "age": 35,
+  "household_role": "adult",
+  "goals": ["fat_loss", "build_consistency", "improve_energy"],
+  "constraints": ["sedentary_job", "limited_time", "failed_three_previous_plans"],
+  "preferences": ["small_steps", "low_pressure"],
+  "safety_notes": ["synthetic_profile"]
+}

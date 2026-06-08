@@ -1,0 +1,9 @@
+{
+  "id": "cashflow-stressed-parent",
+  "age": 38,
+  "household_role": "parent",
+  "goals": ["reduce_money_stress", "keep_family_stable"],
+  "constraints": ["mortgage", "two_children", "variable_expenses"],
+  "preferences": ["clear_limits", "weekly_review"],
+  "safety_notes": ["synthetic_profile"]
+}
