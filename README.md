@@ -120,6 +120,11 @@ LLM evals are intentionally not part of default CI. They should run manually or 
 
 Use `scripts/build-eval-prompts.mjs` to generate deterministic prompts for manual or scheduled LLM evaluation.
 
+Eval prompts split entry-skill behavior from lens behavior:
+
+- Entry evals, such as `life-butler`, test lens selection. The guided response should recommend 2-3 lenses and let the user choose.
+- Lens evals, such as `bogleheads-style`, test direct application. The prompt treats the expected lens as already selected, so the guided response should apply that lens's `Reasoning Flow` instead of routing back to lens selection.
+
 List cases:
 
 ```bash

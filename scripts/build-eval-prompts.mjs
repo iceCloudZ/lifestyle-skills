@@ -60,6 +60,22 @@ export function readSkillBundle(root, entry) {
   return `${main}${referenceText}`;
 }
 
+export function buildWithSkillInstructions(entry) {
+  if (entry.skill_type === "entry") {
+    return `Skill Type: entry
+
+This eval tests entry-skill lens selection. Use the entry skill's first-use and no-data flow when applicable. Recommend 2-3 relevant lenses, explain the recommended lens, and let the user choose before applying a lens.`;
+  }
+
+  if (entry.skill_type === "lens") {
+    return `Skill Type: lens
+
+This eval tests direct lens application. The expected lens has already been selected by the user. Apply the lens directly using its Reasoning Flow. Do not present alternative lens options or route back to the entry skill. Ask only missing key context that changes the lens path, and hand off if the lens boundaries apply.`;
+  }
+
+  throw new Error(`Unknown skill type for ${entry.id}: ${entry.skill_type}`);
+}
+
 export function buildEvalPrompt(root = defaultRoot, evalCase) {
   if (!evalCase) {
     throw new Error("buildEvalPrompt requires an eval case");
@@ -67,6 +83,7 @@ export function buildEvalPrompt(root = defaultRoot, evalCase) {
 
   const expectedEntry = findRegistryEntry(root, evalCase.expected_skill);
   const skillBundle = readSkillBundle(root, expectedEntry);
+  const withSkillInstructions = buildWithSkillInstructions(expectedEntry);
   const rubric = (evalCase.rubric || []).map((item) => `- ${item}`).join("\n");
   const avoidSkills = (evalCase.avoid_skills || []).join(", ") || "none";
   const memberProfile = evalCase.member_profile_ref
@@ -96,7 +113,9 @@ Answer the situation as a general assistant without using any repository skill, 
 
 ## With-Skill Run
 
-Answer the situation using the expected skill and its references. If the user is first-time or no-data, follow No Data Mode. Do not apply a lens silently; recommend 2-3 options and let the user choose when required.
+Answer the situation using the expected skill and its references.
+
+${withSkillInstructions}
 
 ### Skill Bundle
 

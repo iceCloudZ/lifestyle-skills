@@ -31,12 +31,40 @@ test("eval prompt includes baseline, with-skill, and judge sections", async () =
   assert.match(prompt, /does not mention 7-day review without data/i);
 });
 
+test("entry eval prompt tests lens selection before application", async () => {
+  const { buildEvalPrompt, loadEvalCases } = await import(moduleUrl);
+  const cases = loadEvalCases(root);
+  const evalCase = cases.find((item) => item.id === "life-butler-first-movement-001");
+  const prompt = buildEvalPrompt(root, evalCase);
+
+  assert.match(prompt, /Skill Type: entry/);
+  assert.match(prompt, /recommend 2-3/i);
+  assert.match(prompt, /let the user choose/i);
+});
+
+test("lens eval prompt treats the expected lens as already selected", async () => {
+  const { buildEvalPrompt, loadEvalCases } = await import(moduleUrl);
+  const cases = loadEvalCases(root);
+  const evalCase = cases.find((item) => item.id === "finance-bogleheads-style-003");
+  const prompt = buildEvalPrompt(root, evalCase);
+
+  assert.match(prompt, /Skill Type: lens/);
+  assert.match(prompt, /expected lens has already been selected/i);
+  assert.match(prompt, /apply the lens directly/i);
+  assert.match(prompt, /Reasoning Flow/);
+  assert.doesNotMatch(prompt, /recommend 2-3 options/i);
+  assert.doesNotMatch(prompt, /let the user choose/i);
+});
+
 test("README documents manual LLM eval usage", () => {
   const readme = readFileSync(join(root, "README.md"), "utf8");
 
   assert.match(readme, /Manual LLM Evals/);
   assert.match(readme, /build-eval-prompts\.mjs/);
   assert.match(readme, /not part of default CI/i);
+  assert.match(readme, /Entry evals/);
+  assert.match(readme, /Lens evals/);
+  assert.match(readme, /already selected/i);
 });
 
 test("eval prompt builder CLI prints a selected prompt", () => {

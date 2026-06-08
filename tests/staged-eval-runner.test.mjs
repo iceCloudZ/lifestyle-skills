@@ -33,6 +33,34 @@ test("prepare creates isolated baseline and with-skill prompts", async () => {
   assert.ok(existsSync(join(runDir, "with-skill-response.md")));
 });
 
+test("prepare uses direct application instructions for lens evals", async () => {
+  const { prepareEvalRun } = await import(moduleUrl);
+  const runDir = mkdtempSync(join(tmpdir(), "lifestyle-eval-lens-"));
+
+  prepareEvalRun(root, "finance-bogleheads-style-003", runDir);
+
+  const withSkill = readFileSync(join(runDir, "with-skill-prompt.md"), "utf8");
+
+  assert.match(withSkill, /Skill Type: lens/);
+  assert.match(withSkill, /expected lens has already been selected/i);
+  assert.match(withSkill, /apply the lens directly/i);
+  assert.doesNotMatch(withSkill, /recommend 2-3 options/i);
+  assert.doesNotMatch(withSkill, /let the user choose/i);
+});
+
+test("prepare keeps lens selection instructions for entry evals", async () => {
+  const { prepareEvalRun } = await import(moduleUrl);
+  const runDir = mkdtempSync(join(tmpdir(), "lifestyle-eval-entry-"));
+
+  prepareEvalRun(root, "life-butler-first-movement-001", runDir);
+
+  const withSkill = readFileSync(join(runDir, "with-skill-prompt.md"), "utf8");
+
+  assert.match(withSkill, /Skill Type: entry/);
+  assert.match(withSkill, /recommend 2-3/i);
+  assert.match(withSkill, /let the user choose/i);
+});
+
 test("judge prompt blinds response origin and preserves rubric", async () => {
   const { buildJudgeStage, prepareEvalRun } = await import(moduleUrl);
   const runDir = mkdtempSync(join(tmpdir(), "lifestyle-eval-judge-"));

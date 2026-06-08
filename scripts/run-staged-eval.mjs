@@ -9,6 +9,7 @@ import { randomInt } from "node:crypto";
 import { dirname, isAbsolute, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  buildWithSkillInstructions,
   defaultRoot,
   findRegistryEntry,
   loadEvalCases,
@@ -66,6 +67,18 @@ export function prepareEvalRun(root, caseId, runDir) {
   mkdirSync(runDir, { recursive: true });
   const memberProfile = loadMemberProfile(root, evalCase);
   const skillBundle = readSkillBundle(root, expectedEntry);
+  const withSkillInstructions = buildWithSkillInstructions(expectedEntry);
+  const registrySection = expectedEntry.skill_type === "entry"
+    ? `## Registry
+
+\`\`\`json
+${JSON.stringify(registry, null, 2)}
+\`\`\``
+    : `## Expected Lens Metadata
+
+\`\`\`json
+${JSON.stringify(expectedEntry, null, 2)}
+\`\`\``;
 
   const baselinePrompt = `# Baseline Response Task
 
@@ -86,7 +99,7 @@ ${memberProfile}
 
 Answer the user situation using the supplied lifestyle skill materials.
 
-Follow first-use and no-data rules when applicable. Do not silently apply a lens when the materials require user confirmation.
+${withSkillInstructions}
 
 ## User Situation
 
@@ -100,11 +113,7 @@ ${memberProfile}
 
 ${evalCase.expected_skill}
 
-## Registry
-
-\`\`\`json
-${JSON.stringify(registry, null, 2)}
-\`\`\`
+${registrySection}
 
 ## Skill Bundle
 
