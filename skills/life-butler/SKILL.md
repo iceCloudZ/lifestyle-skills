@@ -51,9 +51,11 @@ Read `references/no-data-mode.md` when the first answer depends on missing conte
 
 ## Lens Selection
 
-Read `references/lens-catalog.md` when choosing options. Read `references/selection-rules.md` when multiple lenses could fit.
+Read `../../registry.json` for lens metadata before choosing options. Read `references/lens-catalog.md` for the human-readable catalog, `references/selection-rules.md` for blocker-to-lens mappings, and `references/scoring-model.md` when multiple lenses could fit.
 
 The lens is a thinking mode, not a persona. Use phrases like "values-first spending lens" or "tiny habits movement lens". Do not impersonate public figures.
+
+Use the scoring model to produce an explainable recommendation, not a hidden decision. If the top lens is uncertain or context is missing, ask one clarifying question before applying any lens.
 
 ## Applying A Lens
 
