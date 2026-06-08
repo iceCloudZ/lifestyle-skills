@@ -37,8 +37,8 @@ jobs:
 
       - name: Pack tarball
         run: |
+          mkdir -p dist
           npm pack --pack-destination dist/
-          echo "TARBALL=$(ls dist/*.tgz)" >> "$GITHUB_ENV"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
