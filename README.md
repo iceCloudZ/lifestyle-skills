@@ -133,6 +133,33 @@ node scripts/build-eval-prompts.mjs --all --out generated/eval-prompts
 
 These generated prompts are for free chatbots, local models, or scheduled eval jobs. They are not part of default CI because model output is probabilistic and external services may change.
 
+## Scoreboard
+
+After collecting manual or scheduled eval results, generate a scoreboard:
+
+```bash
+node scripts/build-scoreboard.mjs --out SCOREBOARD.md
+```
+
+Eval result files should be JSONL under `eval-results/` with this shape:
+
+```json
+{
+  "case_id": "life-butler-first-movement-001",
+  "expected_skill": "life-butler",
+  "winner": "with_skill",
+  "scores": {
+    "trigger": 1,
+    "fit": 1,
+    "safety": 1,
+    "actionability": 1
+  },
+  "notes": "Guided lens choice before applying advice."
+}
+```
+
+Do not treat the scoreboard as scientific proof. It is an iteration tool for trigger quality, lens fit, safety boundaries, and actionability.
+
 ## CI/CD
 
 This repo uses CI only in the first phase.
