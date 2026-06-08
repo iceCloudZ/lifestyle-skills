@@ -178,6 +178,46 @@ Finalize maps the blind A/B result back to `baseline`, `with_skill`, or `tie`, v
 
 Prefer different models for response generation and judging. Record provider and model names in `judge-result.json`. Never use private household data with a third-party free chatbot.
 
+## API Eval Runner
+
+The API runner automates generation, blind judging, result archiving, and scoreboard output for any OpenAI-compatible endpoint.
+
+Set credentials in environment variables. Never write API keys into repository files:
+
+```bash
+EVAL_BASE_URL=https://api.example.com/v1
+EVAL_API_KEY=...
+EVAL_MODEL=example-model
+EVAL_MAX_TOKENS=2000
+
+JUDGE_BASE_URL=https://api.example.com/v1
+JUDGE_API_KEY=...
+JUDGE_MODEL=another-model
+JUDGE_MAX_TOKENS=4000
+```
+
+Run all first-use `life-butler` cases with a concurrency limit of 20:
+
+```bash
+node scripts/run-api-evals.mjs \
+  --prefix life-butler-first- \
+  --concurrency 20 \
+  --run generated/api-runs/example \
+  --out eval-results/example.jsonl \
+  --scoreboard SCOREBOARD.md
+```
+
+The runner:
+
+- sends baseline and with-skill prompts as isolated API requests
+- uses a global concurrency pool
+- retries rate limits and transient server errors
+- randomly blinds response origin for the judge
+- archives prompts, responses, API metadata, failures, and final results
+- never stores the API key
+
+For stronger evidence, use a different provider or model for `JUDGE_*`. Using the same model is supported but should be disclosed in published results.
+
 ## Scoreboard
 
 After collecting manual or scheduled eval results, generate a scoreboard:

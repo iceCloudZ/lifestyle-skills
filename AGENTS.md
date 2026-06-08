@@ -41,6 +41,8 @@ For comparative evals, keep the three stages separate:
 
 Do not reveal the A/B mapping to the judge prompt. Prefer a different model or a human for judging.
 
+API eval credentials must come from environment variables. Never write keys to tracked or generated files, logs, error messages, or result JSON.
+
 ## Release
 
 There is no CD yet. Keep publishing manual until the entry flow, lens format, and eval strategy stabilize.
